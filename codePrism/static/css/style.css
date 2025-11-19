@@ -1,0 +1,731 @@
+/* style.css */
+
+/* ==================== 配色方案切换区 ==================== */
+/* 
+   学生可以通过注释/取消注释下方的配色方案来快速切换整体风格
+   目前启用的是方案1，如需更换，将当前方案注释，取消其他方案的注释即可
+*/
+
+/* 【配色方案 1 - 科技蓝】- 当前启用 */
+/* :root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #3b82f6;
+    --background-color: #0f172a;
+    --panel-bg: #1e293b;
+    --panel-border: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --input-bg: #334155;
+    --input-border: #475569;
+    --code-bg: #1e293b;
+    --message-user-bg: #2563eb;
+    --message-ai-bg: #374151;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+} */
+
+/* 【配色方案 2 - 优雅紫】*/
+
+/* :root {
+    --primary-color: #7c3aed;
+    --primary-hover: #6d28d9;
+    --secondary-color: #8b5cf6;
+    --background-color: #1a0b2e;
+    --panel-bg: #2d1b4e;
+    --panel-border: #4a2d6f;
+    --text-primary: #f3e8ff;
+    --text-secondary: #ddd6fe;
+    --input-bg: #4a2d6f;
+    --input-border: #6b4a9f;
+    --code-bg: #2d1b4e;
+    --message-user-bg: #7c3aed;
+    --message-ai-bg: #4a2d6f;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+} */
+
+
+/* 【配色方案 3 - 森林绿】*/
+
+:root {
+    --primary-color: #059669;
+    --primary-hover: #047857;
+    --secondary-color: #10b981;
+    --background-color: #0a2e1f;
+    --panel-bg: #1a4435;
+    --panel-border: #2d5a4a;
+    --text-primary: #ecfdf5;
+    --text-secondary: #d1fae5;
+    --input-bg: #2d5a4a;
+    --input-border: #3f7560;
+    --code-bg: #1a4435;
+    --message-user-bg: #059669;
+    --message-ai-bg: #2d5a4a;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+}
+
+
+/* 【配色方案 4 - 暖橙色】*/
+/*
+:root {
+    --primary-color: #ea580c;
+    --primary-hover: #c2410c;
+    --secondary-color: #f97316;
+    --background-color: #1c1917;
+    --panel-bg: #292524;
+    --panel-border: #44403c;
+    --text-primary: #fef3c7;
+    --text-secondary: #fde68a;
+    --input-bg: #44403c;
+    --input-border: #57534e;
+    --code-bg: #292524;
+    --message-user-bg: #ea580c;
+    --message-ai-bg: #44403c;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+}
+*/
+
+/* 【配色方案 5 - 极简灰】*/
+/*
+:root {
+    --primary-color: #4b5563;
+    --primary-hover: #374151;
+    --secondary-color: #6b7280;
+    --background-color: #111827;
+    --panel-bg: #1f2937;
+    --panel-border: #374151;
+    --text-primary: #f9fafb;
+    --text-secondary: #e5e7eb;
+    --input-bg: #374151;
+    --input-border: #4b5563;
+    --code-bg: #1f2937;
+    --message-user-bg: #4b5563;
+    --message-ai-bg: #374151;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+}
+*/
+
+/* 【配色方案 6 - 自定义】*/
+/* 学生可以在这里自定义自己喜欢的颜色 */
+/*
+:root {
+    --primary-color: #your-color;
+    --primary-hover: #your-color;
+    --secondary-color: #your-color;
+    --background-color: #your-color;
+    --panel-bg: #your-color;
+    --panel-border: #your-color;
+    --text-primary: #your-color;
+    --text-secondary: #your-color;
+    --input-bg: #your-color;
+    --input-border: #your-color;
+    --code-bg: #your-color;
+    --message-user-bg: #your-color;
+    --message-ai-bg: #your-color;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+}
+*/
+
+/* ==================== 基础样式 ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* ==================== 左侧面板 ==================== */
+
+.left-panel {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.code-section {
+    flex: 0 0 75%;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.code-upload-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--panel-border);
+    border-radius: 8px;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.code-upload-area:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(37, 99, 235, 0.05);
+}
+
+.code-upload-area.dragover {
+    border-color: var(--primary-color);
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+.upload-placeholder {
+    text-align: center;
+    padding: 2rem;
+}
+
+.upload-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.upload-placeholder p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.file-hint {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.code-display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--code-bg);
+    border-bottom: 1px solid var(--panel-border);
+}
+
+.code-filename {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.btn-clear {
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.btn-clear:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+}
+
+.code-display pre {
+    flex: 1;
+    margin: 0;
+    overflow: auto;
+    background-color: var(--code-bg);
+    padding: 1rem;
+}
+
+.code-display code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ==================== 答案记录区 ==================== */
+
+.answer-section {
+    flex: 0 0 22%;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.answer-header {
+    padding: 1rem;
+    background-color: var(--code-bg);
+    border-bottom: 1px solid var(--panel-border);
+}
+
+.answer-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.answer-content {
+    padding: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: normal;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--panel-bg);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* ==================== 右侧面板 - AI对话区 ==================== */
+
+.right-panel {
+    width: 70%;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.chat-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--code-bg);
+    border-bottom: 1px solid var(--panel-border);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.btn-new-chat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-new-chat svg {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-new-chat:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* 滚动条样式 */
+.chat-messages::-webkit-scrollbar,
+.code-display pre::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track,
+.code-display pre::-webkit-scrollbar-track {
+    background: var(--panel-bg);
+}
+
+.chat-messages::-webkit-scrollbar-thumb,
+.code-display pre::-webkit-scrollbar-thumb {
+    background: var(--input-border);
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover,
+.code-display pre::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+.welcome-message {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.05));
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.welcome-message h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.welcome-message p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.welcome-message ul {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.welcome-message li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.welcome-message li:before {
+    content: "✓ ";
+    color: var(--success-color);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.hint-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.message {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.user {
+    flex-direction: row-reverse;
+}
+
+.message-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.message.user .message-avatar {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.message.ai .message-avatar {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.message-content {
+    max-width: 80%;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.message.user .message-content {
+    background-color: var(--message-user-bg);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.message.ai .message-content {
+    background-color: var(--message-ai-bg);
+    color: var(--text-primary);
+    border-bottom-left-radius: 4px;
+}
+
+/* Markdown样式 */
+.message-content h1,
+.message-content h2,
+.message-content h3,
+.message-content h4 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.message-content h1 {
+    font-size: 1.5rem;
+}
+
+.message-content h2 {
+    font-size: 1.3rem;
+}
+
+.message-content h3 {
+    font-size: 1.1rem;
+}
+
+.message-content p {
+    margin-bottom: 0.5rem;
+}
+
+.message-content code {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+}
+
+.message-content pre {
+    background-color: var(--code-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+}
+
+.message-content pre code {
+    background: none;
+    padding: 0;
+}
+
+.message-content ul,
+.message-content ol {
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.message-content li {
+    margin-bottom: 0.25rem;
+}
+
+.message-content blockquote {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--code-bg);
+    border-top: 1px solid var(--panel-border);
+}
+
+#chatInput {
+    flex: 1;
+    padding: 1rem;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    resize: none;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+#chatInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--panel-bg);
+}
+
+.btn-send {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.btn-send svg {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-send:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+.btn-send:active {
+    transform: scale(0.95);
+}
+
+.btn-send:disabled {
+    background-color: var(--input-border);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 加载动画 */
+.loading {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.loading-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loading-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loading-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .left-panel,
+    .right-panel {
+        width: 100%;
+    }
+    
+    .left-panel {
+        height: 40%;
+    }
+    
+    .right-panel {
+        height: 60%;
+    }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePrism - 代码规范检查助手</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- 引入代码高亮库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- 引入Markdown渲染库 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧面板 -->
+        <div class="left-panel">
+            <!-- 代码展示区 -->
+            <div class="code-section">
+                <div class="code-upload-area" id="uploadArea">
+                    <div class="upload-placeholder">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                        </svg>
+                        <p>点击上传或拖拽 C 文件到此处</p>
+                        <span class="file-hint">支持 .c 文件</span>
+                    </div>
+                    <input type="file" id="fileInput" accept=".c" style="display: none;">
+                </div>
+                <div class="code-display" id="codeDisplay" style="display: none;">
+                    <div class="code-header">
+                        <span class="code-filename" id="codeFilename">未选择文件</span>
+                        <button class="btn-clear" id="clearCode">清除</button>
+                    </div>
+                    <pre><code class="language-c" id="codeContent"></code></pre>
+                </div>
+            </div>
+
+            <!-- 答案记录区 -->
+            <div class="answer-section">
+                <div class="answer-content">
+                    <div class="form-group">
+                        <input type="text" id="answerFilename" readonly placeholder="自动识别">
+                    </div>
+                    <div class="form-group">
+                        <label>违反的规则ID <span class="hint">(多个规则用逗号分隔，如: D_04_05, R_05_03)</span></label>
+                        <input type="text" id="ruleIds" placeholder="例: D_04_05, R_05_03">
+                    </div>
+                    <button class="btn-submit" id="submitAnswer">提交答案</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧面板 - AI对话区 -->
+        <div class="right-panel">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h2 class="project-title">代码分析大师</h2>
+                    <button class="btn-new-chat" id="newChat">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                        新建对话
+                    </button>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <h3>👋 欢迎使用代码分析助手</h3>
+                        <p>我可以帮助你：</p>
+                        <ul>
+                            <li>分析C代码的规范问题</li>
+                            <li>解释编码规范的含义</li>
+                            <li>提供代码改进建议</li>
+                        </ul>
+                        <p class="hint-text">上传代码后，可以直接询问我相关问题</p>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <textarea id="chatInput" placeholder="输入消息... (Shift+Enter换行, Enter发送)" rows="3"></textarea>
+                    <button class="btn-send" id="sendMessage">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

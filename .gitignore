@@ -1,0 +1,21 @@
+# Python virtual environment
+venv/
+env/
+.env/
+.venv/
+
+# PyCharm virtual environment
+.idea/
+
+# VS Code settings
+.vscode/
+
+# Python byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
