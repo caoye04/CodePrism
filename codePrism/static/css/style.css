@@ -6,7 +6,7 @@
    目前启用的是方案1，如需更换，将当前方案注释，取消其他方案的注释即可
 */
 
-/* 【配色方案 1 - 科技蓝】- 当前启用 */
+/* 【配色方案 1 - 科技蓝】*/
 /* :root {
     --primary-color: #2563eb;
     --primary-hover: #1d4ed8;
@@ -50,7 +50,7 @@
 
 /* 【配色方案 3 - 森林绿】*/
 
-:root {
+/* :root {
     --primary-color: #059669;
     --primary-hover: #047857;
     --secondary-color: #10b981;
@@ -67,12 +67,12 @@
     --success-color: #10b981;
     --warning-color: #f59e0b;
     --error-color: #ef4444;
-}
+} */
 
 
 /* 【配色方案 4 - 暖橙色】*/
-/*
-:root {
+
+/* :root {
     --primary-color: #ea580c;
     --primary-hover: #c2410c;
     --secondary-color: #f97316;
@@ -89,11 +89,11 @@
     --success-color: #10b981;
     --warning-color: #f59e0b;
     --error-color: #ef4444;
-}
-*/
+} */
+
 
 /* 【配色方案 5 - 极简灰】*/
-/*
+
 :root {
     --primary-color: #4b5563;
     --primary-hover: #374151;
@@ -112,7 +112,7 @@
     --warning-color: #f59e0b;
     --error-color: #ef4444;
 }
-*/
+
 
 /* 【配色方案 6 - 自定义】*/
 /* 学生可以在这里自定义自己喜欢的颜色 */
