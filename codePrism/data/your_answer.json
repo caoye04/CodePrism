@@ -1,5 +1,52 @@
 {
-  "test_1": [
-    "R_05_03"
-  ]
+  "code": "#include <stdint.h>\r\n#include <stdio.h>\r\n\r\nstatic long accumulate_patterns(void)\r\n{\r\n    long base = 60l;\r\n    for (int i = 0; i < 6; ++i)\r\n    {\r\n        base += 070;\r\n    }\r\n    return base;\r\n}\r\n\r\nstatic int mix_constants(int base)\r\n{\r\n    int mask = 0123;\r\n    int flag = 0777;\r\n    long total = 100l;\r\n    long other = 250l;\r\n    for (int i = 0; i < base; ++i)\r\n    {\r\n        total += mask;\r\n        other += flag;\r\n    }\r\n    return (int)(total + other);\r\n}\r\n\r\nstatic void write_values(int *buffer, int length)\r\n{\r\n    int start = 010;\r\n    for (int i = 0; i < length; ++i)\r\n    {\r\n        buffer[i] = start + i * 010;\r\n    }\r\n}\r\n\r\nint main(void)\r\n{\r\n    int records[20];\r\n    write_values(records, 20);\r\n    for (int i = 0; i < 20; ++i)\r\n    {\r\n        records[i] += mix_constants(i);\r\n    }\r\n    long result = accumulate_patterns();\r\n    for (int j = 0; j < 20; ++j)\r\n    {\r\n        result += records[j];\r\n        printf(\"row %d %ld\\n\", j, result);\r\n    }\r\n    long suffix = 900l;\r\n    suffix += result;\r\n    printf(\"end %ld\\n\", suffix);\r\n    return (int)suffix;\r\n}\r\n",
+  "response": "```json\n[\n    {\n        \"line\": 6,\n        \"rule\": \"R_07_03\",\n        \"analysis\": \"使用小写字母 'l' 作为 long 后缀，易与数字1混淆，应使用大写 'L'\"\n    },\n    {\n        \"line\": 9,\n        \"rule\": \"R_07_01\",\n        \"analysis\": \"使用八进制常量 070，违反禁止使用八进制常量的规则，应改用十进制56或十六进制0x38\"\n    },\n    {\n        \"line\": 16,\n        \"rule\": \"R_07_01\",\n        \"analysis\": \"使用八进制常量 0123，违反禁止使用八进制常量的规则，应改用十进制83或十六进制0x53\"\n    },\n    {\n        \"line\": 17,\n        \"rule\": \"R_07_01\",\n        \"analysis\": \"使用八进制常量 0777，违反禁止使用八进制常量的规则，应改用十进制511或十六进制0x1FF\"\n    },\n    {\n        \"line\": 18,\n        \"rule\": \"R_07_03\",\n        \"analysis\": \"使用小写字母 'l' 作为 long 后缀，易与数字1混淆，应使用大写 'L'\"\n    },\n    {\n        \"line\": 19,\n        \"rule\": \"R_07_03\",\n        \"analysis\": \"使用小写字母 'l' 作为 long 后缀，易与数字1混淆，应使用大写 'L'\"\n    },\n    {\n        \"line\": 30,\n        \"rule\": \"R_07_01\",\n        \"analysis\": \"使用八进制常量 010，违反禁止使用八进制常量的规则，应改用十进制8或十六进制0x8\"\n    },\n    {\n        \"line\": 33,\n        \"rule\": \"R_07_01\",\n        \"analysis\": \"使用八进制常量 010，违反禁止使用八进制常量的规则，应改用十进制8或十六进制0x8\"\n    },\n    {\n        \"line\": 51,\n        \"rule\": \"R_07_03\",\n        \"analysis\": \"使用小写字母 'l' 作为 long 后缀，易与数字1混淆，应使用大写 'L'\"\n    }\n]\n```",
+  "violations": [
+    {
+      "line": 6,
+      "rule": "R_07_03",
+      "analysis": "使用小写字母 'l' 作为 long 后缀，易与数字1混淆，应使用大写 'L'"
+    },
+    {
+      "line": 9,
+      "rule": "R_07_01",
+      "analysis": "使用八进制常量 070，违反禁止使用八进制常量的规则，应改用十进制56或十六进制0x38"
+    },
+    {
+      "line": 16,
+      "rule": "R_07_01",
+      "analysis": "使用八进制常量 0123，违反禁止使用八进制常量的规则，应改用十进制83或十六进制0x53"
+    },
+    {
+      "line": 17,
+      "rule": "R_07_01",
+      "analysis": "使用八进制常量 0777，违反禁止使用八进制常量的规则，应改用十进制511或十六进制0x1FF"
+    },
+    {
+      "line": 18,
+      "rule": "R_07_03",
+      "analysis": "使用小写字母 'l' 作为 long 后缀，易与数字1混淆，应使用大写 'L'"
+    },
+    {
+      "line": 19,
+      "rule": "R_07_03",
+      "analysis": "使用小写字母 'l' 作为 long 后缀，易与数字1混淆，应使用大写 'L'"
+    },
+    {
+      "line": 30,
+      "rule": "R_07_01",
+      "analysis": "使用八进制常量 010，违反禁止使用八进制常量的规则，应改用十进制8或十六进制0x8"
+    },
+    {
+      "line": 33,
+      "rule": "R_07_01",
+      "analysis": "使用八进制常量 010，违反禁止使用八进制常量的规则，应改用十进制8或十六进制0x8"
+    },
+    {
+      "line": 51,
+      "rule": "R_07_03",
+      "analysis": "使用小写字母 'l' 作为 long 后缀，易与数字1混淆，应使用大写 'L'"
+    }
+  ],
+  "timestamp": "2025-11-23T22:01:54.769708"
 }
